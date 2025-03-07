@@ -11,9 +11,9 @@ const port = 3000; // Define a porta
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 app.use(roteadorUsuario);
 app.use(roteadorLogin);
-app.use(cors());
 
 app.get("/", (req, res) => {
   console.log("Rota / solicitada");
