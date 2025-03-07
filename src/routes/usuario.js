@@ -21,7 +21,7 @@ router.get("/usuarios", async (req, res) => {
   console.log("Rota GET/usuarios solicitada");
 });
 
-router.get("/usuario/:id", verificarAutenticacao, async (req, res) => {
+router.get("/usuario/:id", async (req, res) => {
   console.log("Rota GET /usuario/# solicitada");
   try {
     const usuario = await selectUsuario(req.params.id);
@@ -32,7 +32,7 @@ router.get("/usuario/:id", verificarAutenticacao, async (req, res) => {
   }
 });
 
-router.post("/usuario", async (req, res) => {
+router.post("/usuario", verificarAutenticacao, async (req, res) => {
   console.log("Rota POST /usuario solicitada");
   try {
     await insertUsuario(req.body);
