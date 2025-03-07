@@ -1,8 +1,8 @@
 import dotenv from "dotenv";
+import cors from "cors";
 import express from "express";
 import roteadorUsuario from "./routes/usuario.js";
 import roteadorLogin from "./routes/login.js";
-import cors from "cors";
 
 dotenv.config();
 
